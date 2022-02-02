@@ -1,8 +1,6 @@
 Flask==1.1.1
 gunicorn==19.9.0
 Jinja2==2.11.3
-MarkupSafe==1.1.1
-Werkzeug==0.15.5
 jsonschema==3.2.0
 requests==2.23.0
 pyrebase==3.0.27
