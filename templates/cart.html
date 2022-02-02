@@ -1,0 +1,38 @@
+{% extends "index.html" %} {%block body%}
+<center>
+  <h1>Cart</h1>
+</center>
+{% for c in cart%}
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="card shadow mt-2 mb-2 bg-white rounded">
+          
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-2 col-sm-2"><img src="https://image.tmdb.org/t/p/original/{{c.posterpath}}" alt="ffff" width='200'><br></div>
+              <div class="col-md-2 col-sm-2">{{c.filmname}}</div>
+              <div class="col-md-2 col-sm-2">
+                <a  >
+                  <b> ${{ c.cost}}</b>
+                  </a>
+              </div>
+              <div class="col-md-2">
+                <a  class="btn btn-primary" href="/view/{{c.filmid}}/{{id}}">View</a>
+              </div>
+              <div class="col-md-2">
+                <a  class="btn btn-primary" href="/delete/{{c.id}}/{{id}}">Remove</a>
+              </div>
+              <div class="col-md-2">
+                <a  class="btn btn-danger" href="/buy/{{id}}/{{c.id}}/{{c.filmid}}/{{c.posterpath}}/{{c.filmname}}/{{ c.cost}}"> Buy Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endfor %}
+
+{% endblock%}

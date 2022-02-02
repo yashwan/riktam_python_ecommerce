@@ -1,0 +1,35 @@
+<!-- @format -->
+
+{% extends "index.html" %} {%block body%}
+<center>
+	<div class="shadow p-3 mb-5 bg-white rounded">
+		<img
+			src="https://image.tmdb.org/t/p/original/{{data['backdrop_path']}}"
+			alt="No poster"
+			width="300px"
+		/>
+		<h3>{{data['original_title']}}</h3>
+		<p>{{data['overview']}}</p>
+		<p><b> ${{ data["vote_average"]}}</b></p>
+		
+
+		<a class="btn btn-danger" href="/addtocart/{{id}}/{{data['id']}}/{{data['backdrop_path']}}/{{data['original_title']}}/{{ data['vote_average']}}" >Add To Cart</a>
+	</div>
+</center>
+<div class="container">
+	<div class="row">
+		{%for rec in recs%}
+		<div class="col-md-2 mt-5 ml-2">
+			<img
+				src="https://image.tmdb.org/t/p/original/{{rec['poster_path']}}"
+				alt="No poster"
+				width="200"
+			/>
+
+			<a class="btn btn-success" href="/view/{{rec['id']}}/{{id}}">view</a>
+			<b> ${{ rec["vote_average"]}}</b>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{%endblock%}

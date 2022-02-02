@@ -1,0 +1,36 @@
+{% extends "index.html" %} {%block body%}
+<center>
+  <h1>Your Items</h1>
+</center>
+{% for c in buy%}
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card shadow mt-2 mb-2 bg-white rounded">
+          
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-2"><img src="https://image.tmdb.org/t/p/original/{{c.posterpath}}" alt="ffff" width='200'><br></div>
+              <div class="col-md-2">{{c.filmname}}</div>
+              <div class="col-md-2">
+                <a  >
+                  <b> ${{ c.cost}}</b>
+                  </a>
+              </div>
+              <div class="col-md-2">
+                <a  class="btn btn-primary" href="/view/{{c.filmid}}">View</a>
+              </div>
+              
+              <div class="col-md-2">
+                <a  class="btn btn-danger" href='/del/{{c.id}}/{{id}}'> return</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endfor %}
+
+{% endblock%}
